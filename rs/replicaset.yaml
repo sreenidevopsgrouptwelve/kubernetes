@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: first-container
-        image: nginx
+        image: httpd

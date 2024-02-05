@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deployment
+spec:
+  selector:
+    matchLabels:
+      project: strategy
+  template:
+    metadata:
+      name: first-pod
+      labels:
+        project: strategy
+    spec:
+      containers:
+      - name: first-container
+        image: nginx
