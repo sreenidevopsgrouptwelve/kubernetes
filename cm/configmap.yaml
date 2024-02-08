@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  env: dev
+  memory: 512MB
+  project: flipkart
+  space: login
+  Industry: E-commerce
+kind: ConfigMap
+metadata:
+  name: first-cm

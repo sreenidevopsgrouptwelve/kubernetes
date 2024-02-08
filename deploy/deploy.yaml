@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: first-deployment
+  labels:
+    project: strategy
 spec:
   selector:
     matchLabels:
@@ -14,4 +16,9 @@ spec:
     spec:
       containers:
       - name: first-container
-        image: nginx
+        image: httpd
+        envFrom:
+        - secretRef:
+            name: first-secret
+        - configMapRef:
+            name: first-cm
