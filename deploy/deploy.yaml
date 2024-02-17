@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: first-container
-        image: httpd
+        image: nginx
         envFrom:
         - secretRef:
             name: first-secret

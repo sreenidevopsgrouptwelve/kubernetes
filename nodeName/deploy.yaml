@@ -1,18 +1,20 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: first-rs
+  name: schedule-into-particular-node-deployment
+  labels:
+    project: strategy
 spec:
-  replicas: 4
   selector:
     matchLabels:
-      project: sample
+      project: strategy
   template:
     metadata:
       name: first-pod
       labels:
-        project: sample
+        project: strategy
     spec:
+      nodeName: gk3-cluster-one-pool-2-7434a2e1-b5xw
       containers:
       - name: first-container
         image: httpd
